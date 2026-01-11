@@ -1,6 +1,6 @@
 # Why Version Control Exists: The Pendrive Problem
 
-![Why Version Control Exists](./banner.png)
+![Why Version Control Exists](./banner_0.jpg)
 
 When I first started learning software development, I didn’t want to just memorize Git commands.
 I wanted to understand the **why** behind them.

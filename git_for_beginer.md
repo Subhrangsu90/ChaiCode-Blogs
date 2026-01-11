@@ -1,6 +1,6 @@
 # Git for Beginners: From “What Is This?” to Your First Commit
 
-![Why Version Control Exists](./banner3.png)
+![Why Version Control Exists](./banner3.jpg)
 
 Have you ever worked on a project, made a mistake, and wished you could just **“Control + Z” your entire life** back to two hours ago?
 Or collaborated on a group project where everyone emailed files named:

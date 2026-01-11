@@ -1,6 +1,6 @@
 # Inside Git: How It Really Works (With the `.git` Folder Explained)
 
-![Why Version Control Exists](./banner1.png)
+![Why Version Control Exists](./banner1.jpg)
 
 > Git is not magic.
 > Git is just a **very smart storage system**.
