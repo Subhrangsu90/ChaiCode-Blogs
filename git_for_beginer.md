@@ -11,10 +11,6 @@ final_v2_REALLY_FINAL.docx
 
 That frustration is exactly why **Git** exists.
 
-Based on personal study notes and real Git internals, this guide walks you through Git from the **“Why”** to the **“How”**, in a beginner-friendly but _conceptually correct_ way.
-
----
-
 ## What Is Git?
 
 Git is a **Version Control System (VCS)**.
@@ -502,5 +498,3 @@ Git stops being scary and starts feeling powerful.
 
 You’re no longer afraid of mistakes —
 because **Git remembers everything**.
-
----
