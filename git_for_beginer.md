@@ -276,19 +276,11 @@ git diff <hash1> <hash2>
 
 ### Commit Chain (Linked List)
 
-$$
-\boxed{\text{Commit-01}}
-\;\xleftarrow{}\;
-\boxed{\text{Commit-02}}
-\;\xleftarrow{}\;
-\boxed{\text{Commit-03}}
-\;\xleftarrow{}\;
-\boxed{\text{Commit-04}}
-\\[6pt]
-\hspace{8.5cm}\uparrow
-\\
-\hspace{8.6cm}\text{HEAD}
-$$
+```
+Commit-01 ← Commit-02 ← Commit-03 ← Commit-04
+                                         ↑
+                                        HEAD
+```
 
 Each commit stores:
 

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ultra-Modern Unified Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3b82f6",
+                        "accent-neon": "#00ff9d",
+                        "accent-purple": "#bd00ff",
+                        "accent-gold": "#ffcc00",
+                        "background-black": "#020203",
+                        "card-pitch": "#0a0a0c",
+                        "border-subtle": "rgba(255, 255, 255, 0.08)"
+                    },
+                    fontFamily: {
+                        "sans": ["Plus Jakarta Sans", "Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020203;
+            overflow: hidden;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .glass-metric {
+            background: rgba(10, 10, 12, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+        }
+        .glow-bg-blue { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3)); }
+        .glow-bg-purple { filter: drop-shadow(0 0 15px rgba(189, 0, 255, 0.3)); }
+        .glow-bg-neon { filter: drop-shadow(0 0 15px rgba(0, 255, 157, 0.3)); }
+        .glow-bg-gold { filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.3)); }
+        .header-blur {
+            background: rgba(2, 2, 3, 0.6);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .column-card {
+            background: rgba(10, 10, 12, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .column-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .fab-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #bd00ff 100%);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(189, 0, 255, 0.2);
+        }
+        .mono-details {
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.02em;
+        }
+        .search-container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="text-slate-300 h-screen w-screen overflow-hidden selection:bg-primary/30">
+    <header class="fixed top-0 left-0 right-0 z-50 h-20 px-8 flex items-center justify-between header-blur">
+        <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div
+                    class="size-8 bg-gradient-to-tr from-primary to-accent-purple rounded-lg flex items-center justify-center text-white shadow-lg">
+                    <span class="material-symbols-outlined text-xl">terminal</span>
+                </div>
+                <span class="font-bold text-sm tracking-tighter uppercase text-white">Console.v2</span>
+            </div>
+            <div
+                class="search-container flex items-center w-96 rounded-full px-4 py-1.5 group focus-within:border-white/20 transition-all">
+                <span
+                    class="material-symbols-outlined text-slate-500 text-lg group-focus-within:text-primary">search</span>
+                <input
+                    class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-600 font-medium"
+                    placeholder="Quick find..." type="text" />
+                <span
+                    class="text-[10px] font-mono text-slate-600 bg-white/5 px-1.5 py-0.5 rounded border border-white/10 ml-2">⌘K</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <nav class="flex items-center gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                <a class="text-white" href="#">Dashboard</a>
+                <a class="hover:text-white transition-colors" href="#">Projects</a>
+                <a class="hover:text-white transition-colors" href="#">Insights</a>
+            </nav>
+            <div class="h-4 w-px bg-white/10"></div>
+            <div class="flex items-center gap-3">
+                <div class="size-8 rounded-full border border-white/20 p-0.5 overflow-hidden ring-2 ring-primary/20">
+                    <img alt="Avatar" class="w-full h-full object-cover rounded-full"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdWU7BhsJMRwNrDan8bt4B9IJYI-xTjkdiQmDIOvi4kGnI1c5CmRGug3oBy3YFL5-rst3RxwoFA0ZNG4cUZFy5KjTyCr4geFArR-QcABfs7rR3KzBNnlfILKov6j6O3bQKjVo2M8yV1F90dWE4aa0ATH2LX8kVAYFaZ0i59aW3pcukX7B3wyy8XGWrjrj1Ur5qV7OXmJuoToYjLxD0Sb8Bn6mFZfIUVZ9Duu9cRccceEd7b7PzYP1d-EpTXw_g7x9rjKnmlEL9_vY" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="h-screen pt-24 pb-8 px-8 flex flex-col gap-8">
+        <div class="grid grid-cols-4 gap-4 max-w-[1400px] mx-auto w-full">
+            <div class="glass-metric rounded-xl p-3 flex items-center gap-4 group cursor-default">
+                <div class="size-10 rounded-lg flex items-center justify-center relative">
+                    <div
+                        class="absolute inset-0 bg-primary/20 blur-md rounded-full glow-bg-blue opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="material-symbols-outlined text-primary relative z-10">layers</span>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono font-semibold text-slate-500 uppercase">Repos</div>
+                    <div class="text-lg font-bold text-white leading-none">42<span
+                            class="text-[10px] text-primary ml-1">+2</span></div>
+                </div>
+            </div>
+            <div class="glass-metric rounded-xl p-3 flex items-center gap-4 group cursor-default">
+                <div class="size-10 rounded-lg flex items-center justify-center relative">
+                    <div
+                        class="absolute inset-0 bg-accent-purple/20 blur-md rounded-full glow-bg-purple opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="material-symbols-outlined text-accent-purple relative z-10">error_outline</span>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono font-semibold text-slate-500 uppercase">Issues</div>
+                    <div class="text-lg font-bold text-white leading-none">24</div>
+                </div>
+            </div>
+            <div class="glass-metric rounded-xl p-3 flex items-center gap-4 group cursor-default">
+                <div class="size-10 rounded-lg flex items-center justify-center relative">
+                    <div
+                        class="absolute inset-0 bg-accent-neon/20 blur-md rounded-full glow-bg-neon opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="material-symbols-outlined text-accent-neon relative z-10">conversion_path</span>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono font-semibold text-slate-500 uppercase">PRs</div>
+                    <div class="text-lg font-bold text-white leading-none">12</div>
+                </div>
+            </div>
+            <div class="glass-metric rounded-xl p-3 flex items-center gap-4 group cursor-default">
+                <div class="size-10 rounded-lg flex items-center justify-center relative">
+                    <div
+                        class="absolute inset-0 bg-accent-gold/20 blur-md rounded-full glow-bg-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="material-symbols-outlined text-accent-gold relative z-10">star</span>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono font-semibold text-slate-500 uppercase">Stars</div>
+                    <div class="text-lg font-bold text-white leading-none">4.2k</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-1 flex gap-6 overflow-hidden max-w-[1600px] mx-auto w-full">
+            <section class="flex-1 flex flex-col h-full overflow-hidden">
+                <div class="flex items-center justify-between mb-4 px-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-1.5 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                        <h2 class="text-[11px] font-bold uppercase tracking-[0.15em] text-white/90">Repositories</h2>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500">SORT BY RECENT</span>
+                </div>
+                <div class="flex-1 overflow-y-auto custom-scrollbar space-y-2.5 pr-2">
+                    <div class="column-card p-4 rounded-xl group cursor-pointer">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="font-semibold text-sm text-slate-100 group-hover:text-primary transition-colors">
+                                next-gen-compiler</h3>
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[10px] font-mono text-slate-400">2.4k</span>
+                                <span class="material-symbols-outlined text-[14px] text-accent-gold">star</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mono-details text-[10px] text-slate-500 uppercase">
+                            <span class="flex items-center gap-1.5">
+                                <div class="size-1.5 rounded-full bg-[#3178c6]"></div> TS
+                            </span>
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">schedule</span> 2H AGO</span>
+                        </div>
+                    </div>
+                    <div class="column-card p-4 rounded-xl group cursor-pointer">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="font-semibold text-sm text-slate-100 group-hover:text-primary transition-colors">
+                                data-viz-engine</h3>
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[10px] font-mono text-slate-400">856</span>
+                                <span class="material-symbols-outlined text-[14px] text-accent-gold">star</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mono-details text-[10px] text-slate-500 uppercase">
+                            <span class="flex items-center gap-1.5">
+                                <div class="size-1.5 rounded-full bg-[#3572A5]"></div> PY
+                            </span>
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">schedule</span> 1D AGO</span>
+                        </div>
+                    </div>
+                    <div class="column-card p-4 rounded-xl group cursor-pointer">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="font-semibold text-sm text-slate-100 group-hover:text-primary transition-colors">
+                                auth-core-wasm</h3>
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[10px] font-mono text-slate-400">1.2k</span>
+                                <span class="material-symbols-outlined text-[14px] text-accent-gold">star</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mono-details text-[10px] text-slate-500 uppercase">
+                            <span class="flex items-center gap-1.5">
+                                <div class="size-1.5 rounded-full bg-[#dea584]"></div> RS
+                            </span>
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">schedule</span> 3D AGO</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="flex-1 flex flex-col h-full overflow-hidden">
+                <div class="flex items-center justify-between mb-4 px-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-1.5 h-4 bg-accent-purple rounded-full shadow-[0_0_10px_rgba(189,0,255,0.5)]">
+                        </div>
+                        <h2 class="text-[11px] font-bold uppercase tracking-[0.15em] text-white/90">Active Issues</h2>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500">5 PENDING</span>
+                </div>
+                <div class="flex-1 overflow-y-auto custom-scrollbar space-y-2.5 pr-2">
+                    <div class="column-card p-4 rounded-xl group cursor-pointer">
+                        <div class="flex justify-between items-start gap-4 mb-3">
+                            <h3
+                                class="font-semibold text-sm text-slate-100 leading-snug group-hover:text-accent-purple transition-colors">
+                                Global state hydration mismatch in concurrent mode</h3>
+                            <span
+                                class="shrink-0 px-2 py-0.5 rounded text-[8px] font-bold bg-accent-purple/10 text-accent-purple border border-accent-purple/30 mono-details">CRITICAL</span>
+                        </div>
+                        <div class="flex items-center gap-4 mono-details text-[10px] text-slate-500 uppercase">
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">folder</span> core-system</span>
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">schedule</span> 12M AGO</span>
+                        </div>
+                    </div>
+                    <div class="column-card p-4 rounded-xl group cursor-pointer">
+                        <div class="flex justify-between items-start gap-4 mb-3">
+                            <h3
+                                class="font-semibold text-sm text-slate-100 leading-snug group-hover:text-accent-purple transition-colors">
+                                Refactor authentication flow to support passkeys</h3>
+                            <span
+                                class="shrink-0 px-2 py-0.5 rounded text-[8px] font-bold bg-accent-neon/10 text-accent-neon border border-accent-neon/30 mono-details">HIGH</span>
+                        </div>
+                        <div class="flex items-center gap-4 mono-details text-[10px] text-slate-500 uppercase">
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">folder</span> auth-lib</span>
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">schedule</span> 4H AGO</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="flex-1 flex flex-col h-full overflow-hidden">
+                <div class="flex items-center justify-between mb-4 px-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-1.5 h-4 bg-accent-neon rounded-full shadow-[0_0_10px_rgba(0,255,157,0.5)]"></div>
+                        <h2 class="text-[11px] font-bold uppercase tracking-[0.15em] text-white/90">Pull Requests</h2>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500">8 REVIEWING</span>
+                </div>
+                <div class="flex-1 overflow-y-auto custom-scrollbar space-y-2.5 pr-2">
+                    <div class="column-card p-4 rounded-xl group cursor-pointer">
+                        <div class="flex justify-between items-start gap-4 mb-3">
+                            <h3
+                                class="font-semibold text-sm text-slate-100 leading-snug group-hover:text-accent-neon transition-colors">
+                                feat: implement z-standard compression</h3>
+                            <span
+                                class="shrink-0 px-2 py-0.5 rounded text-[8px] font-bold bg-primary/10 text-primary border border-primary/30 mono-details">REVIEW</span>
+                        </div>
+                        <div class="flex items-center gap-4 mono-details text-[10px] text-slate-500 uppercase">
+                            <span class="flex items-center gap-1.5 text-accent-neon font-bold"><span
+                                    class="material-symbols-outlined text-[14px]">check_circle</span> 8/8 PASSED</span>
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">schedule</span> 2H AGO</span>
+                        </div>
+                    </div>
+                    <div class="column-card p-4 rounded-xl group cursor-pointer">
+                        <div class="flex justify-between items-start gap-4 mb-3">
+                            <h3
+                                class="font-semibold text-sm text-slate-100 leading-snug group-hover:text-accent-neon transition-colors">
+                                fix: edge case in token validation</h3>
+                            <span
+                                class="shrink-0 px-2 py-0.5 rounded text-[8px] font-bold bg-accent-neon/10 text-accent-neon border border-accent-neon/30 mono-details">READY</span>
+                        </div>
+                        <div class="flex items-center gap-4 mono-details text-[10px] text-slate-500 uppercase">
+                            <span class="flex items-center gap-1.5 text-accent-neon font-bold"><span
+                                    class="material-symbols-outlined text-[14px]">check_circle</span> 12/12
+                                PASSED</span>
+                            <span class="flex items-center gap-1.5"><span
+                                    class="material-symbols-outlined text-[12px]">schedule</span> 5H AGO</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div class="fixed bottom-8 right-8 flex flex-col items-end gap-4 group">
+        <div
+            class="flex flex-col gap-2 scale-0 group-hover:scale-100 transition-all origin-bottom-right opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 duration-300 pointer-events-none group-hover:pointer-events-auto mb-4">
+            <button
+                class="flex items-center justify-end gap-4 px-4 py-2.5 rounded-xl bg-card-pitch border border-white/5 hover:bg-white/10 transition-all text-slate-400 hover:text-white">
+                <span class="text-[10px] font-bold uppercase tracking-widest">New Pull Request</span>
+                <span class="material-symbols-outlined text-lg">add_task</span>
+            </button>
+            <button
+                class="flex items-center justify-end gap-4 px-4 py-2.5 rounded-xl bg-card-pitch border border-white/5 hover:bg-white/10 transition-all text-slate-400 hover:text-white">
+                <span class="text-[10px] font-bold uppercase tracking-widest">Open Issue</span>
+                <span class="material-symbols-outlined text-lg">error</span>
+            </button>
+            <button
+                class="flex items-center justify-end gap-4 px-4 py-2.5 rounded-xl bg-card-pitch border border-white/5 hover:bg-white/10 transition-all text-slate-400 hover:text-white">
+                <span class="text-[10px] font-bold uppercase tracking-widest">New Repository</span>
+                <span class="material-symbols-outlined text-lg">add_box</span>
+            </button>
+        </div>
+        <button
+            class="fab-gradient size-14 rounded-2xl flex items-center justify-center text-white shadow-2xl hover:scale-105 transition-all z-50 group-hover:rotate-45">
+            <span class="material-symbols-outlined text-3xl font-light">add</span>
+        </button>
+    </div>
+
+</body>
+
+</html>
