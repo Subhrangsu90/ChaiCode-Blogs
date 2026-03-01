@@ -440,7 +440,7 @@ Useful for:
 ## How Promise Chaining Actually Flows
 
 Before we dive into the event loop, let’s visualize how Promise chaining creates new Promises and propagates fulfillment or rejection through the chain.
-![Promise Execution Flow](./promise-flow.png)
+<img width="1536" height="1024" alt="promise-flow" src="https://github.com/user-attachments/assets/713fad45-912e-4b9a-ad9d-2bdea6306e72" />
 _How Promise fulfillment, rejection, and chaining return a new Promise in the async workflow._
 
 ## The Real Magic — Microtasks & Execution Order
