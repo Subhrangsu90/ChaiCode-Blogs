@@ -545,7 +545,8 @@ Graduation Year: null
 
 ## Summary Checklist
 
-![var vs let vs const](./var_let_const.png)
+<img width="1536" height="1024" alt="var_let_const" src="https://github.com/user-attachments/assets/de5c47cc-ded7-42d1-ba59-820452d5f4e9" />
+
 
 ## Final Thoughts
 
