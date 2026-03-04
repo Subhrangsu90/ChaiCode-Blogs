@@ -89,7 +89,7 @@ Output
 Subhrangsu 100 10
 ```
 
-**_Notes:_** Reserved Keywords Cannot Be Used
+**Note:** Reserved keywords cannot be used as variable names.
 
 ### The Pro Tip: camelCase
 
@@ -190,6 +190,8 @@ Hello
 ReferenceError: message is not defined
 ```
 
+If a variable is declared but not assigned a value, JavaScript automatically assigns `undefined`.
+
 ```js
 let a;
 console.log(a); // undefined
@@ -201,7 +203,8 @@ console.log(a); // 45
 ### The Permanent Vault: `const`
 
 `const` is for constants. Once you assign a value to a `const` box, you cannot reassign it to something else. It is also block-scoped.
-The Nuance: While you can't swap the whole "box" for another one, if you put an Object or an Array inside a `const`, you can still change the items inside that object or array.
+
+_*Important nuance:*_ While you cannot reassign the entire object or array stored in a `const` variable, you can still modify the values inside it.
 
 ```javascript
 const myCity = "New York";
@@ -306,6 +309,7 @@ JavaScript data types are generally divided into two categories:
 ### Primitive Data Types
 
 Primitive values are **immutable**, meaning their values cannot be changed once created.
+This means operations on primitive values always produce a new value rather than modifying the original one.
 
 ### String
 
@@ -372,7 +376,7 @@ null
 object
 ```
 
-Note: `typeof null` returns `"object"` due to a historical JavaScript bug.
+Note: `typeof null` returns `"object"` due to a historical bug in JavaScript that has been kept for backward compatibility.
 
 ### Undefined
 
@@ -444,6 +448,8 @@ undefined
 
 ## 5. Copying Values: The Beginner's Trap
 
+Understanding how JavaScript copies values is very important because it affects how data behaves when assigned to another variable.
+
 ### Primitive → Copy by Value
 
 ```javascript
@@ -492,8 +498,7 @@ Both variables point to the **same object in memory**.
 ```javascript
 let original = { power: 50 };
 
-let clone = structuredClone(original);
-
+let clone = { ...original };
 clone.power = 90;
 
 console.log(original);
@@ -508,6 +513,7 @@ Output
 ```
 
 Now they are **independent objects**.
+For simple objects, the spread operator can be used. For deep nested objects, `structuredClone()` is safer.
 
 ## 6. Practical Lab: Observe the Behavior
 
@@ -530,7 +536,7 @@ console.log("Graduation Year:", graduationYear);
 
 Output
 
-```
+```shell
 Name: Subhrangsu | Type: string
 Age: 25 | Type: number
 New Age: 26
