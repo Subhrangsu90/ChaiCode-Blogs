@@ -525,6 +525,9 @@ let isGraduated = false;
 console.log("Name:", studentName, "| Type:", typeof studentName);
 console.log("Age:", studentAge, "| Type:", typeof studentAge);
 
+// studentName = "Subha"
+// TypeError: Assignment to constant variable.
+
 studentAge = 26;
 
 console.log("New Age:", studentAge);
