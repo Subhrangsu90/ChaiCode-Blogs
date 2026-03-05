@@ -14,7 +14,7 @@ Operators allow us to **perform calculations, compare values, and create logic i
 
 In this article, we'll explore the most common operators you will use every day.
 
-![JavaScript Operator Categories](./operator-categories.png)
+<img width="1536" height="1024" alt="operator-categories" src="https://github.com/user-attachments/assets/ca83f532-6d1c-4809-a6b0-eb49fc879e31" />
 
 JavaScript operators can be grouped into several categories such as arithmetic, comparison, logical, and assignment operators.
 
@@ -175,7 +175,8 @@ Most developers prefer using **`===`** because it avoids unexpected type convers
 
 Logical operators help us **combine multiple conditions**.
 
-![Logical Operators Truth Table](./logical-truth-table.png)
+<img width="1536" height="1024" alt="logical-truth-table" src="https://github.com/user-attachments/assets/f1369bbb-871b-4c12-b626-d4bdde4e9a92" />
+
 
 | Operator | Meaning |     |     |
 | -------- | ------- | --- | --- |
