@@ -177,11 +177,11 @@ Logical operators help us **combine multiple conditions**.
 
 ![Logical Operators Truth Table](./logical-truth-table.png)
 
-| Operator | Meaning |     |     |
-| -------- | ------- | --- | --- |
-| `&&`     | AND     |     |     |
-| `\|\|`   | OR      |     |     |
-| `!`      | NOT     |     |     |
+| Operator | Meaning |
+| -------- | ------- |
+| `&&`     | AND     |
+| `\|\|`   | OR      |
+| `!`      | NOT     |
 
 ### AND Operator `&&`
 

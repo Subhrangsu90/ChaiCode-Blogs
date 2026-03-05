@@ -2,7 +2,7 @@
 
 ![Control Flow Poster](./control_flow_poster.png)
 
-In the **previous blog of this JavaScript series**, we explored **[JavaScript Operators: The Basics You Need to Know]()** and learned how operators help us perform calculations, comparisons, and logical checks.
+In the **previous blog of this JavaScript series**, we explored **[JavaScript Operators: The Basics You Need to Know](https://subhrangsu.hashnode.dev/javascript-operators-the-basics-you-need-to-know)** and learned how operators help us perform calculations, comparisons, and logical checks.
 
 But once we can **compare values**, the next question is:
 
@@ -29,7 +29,7 @@ In this article, we will learn how JavaScript handles decisions using:
 - `else if`
 - `switch`
 
-# What is Control Flow?
+## What is Control Flow?
 
 **Control flow** refers to the **order in which statements are executed in a program**.
 
@@ -55,7 +55,7 @@ But sometimes we want code to run **only if a condition is true**.
 
 This is where **conditional statements** help us control the program flow.
 
-# The `if` Statement
+## The `if` Statement
 
 The **`if` statement** runs a block of code **only when a condition is true**.
 
@@ -93,7 +93,7 @@ age >= 18
 
 If the condition is **true**, the code inside the block runs.
 
-# The `if...else` Statement
+## The `if...else` Statement
 
 Sometimes we want to run **one block of code if the condition is true and another if it is false**.
 
@@ -138,7 +138,7 @@ if (username) {
 }
 ```
 
-# The `else if` Ladder
+## The `else if` Ladder
 
 Sometimes we need to check **multiple conditions**.
 
@@ -172,7 +172,7 @@ Once a condition is **true**, the rest are skipped.
 
 ![If...else flow](./if_else.jpg)
 
-# Example Program: Positive, Negative, or Zero
+## Example Program: Positive, Negative, or Zero
 
 Let’s write a simple program to determine the type of a number.
 
@@ -196,7 +196,7 @@ Negative number
 
 Here we used an **if–else if ladder** because we had **multiple possible conditions**.
 
-# The `switch` Statement
+## The `switch` Statement
 
 The **`switch` statement** is used when we want to compare **one value against multiple possible cases**.
 
@@ -217,7 +217,7 @@ switch (expression) {
 }
 ```
 
-# Example: Day of the Week
+## Example: Day of the Week
 
 ```javascript
 let day = 3;
@@ -264,7 +264,7 @@ Wednesday
 
 ![Switch flow](./switch.png)
 
-# Why `break` is Important
+## Why `break` is Important
 
 Inside a `switch`, the **`break` statement stops execution**.
 
@@ -297,7 +297,7 @@ Wednesday
 
 This happens because **switch keeps executing cases until it finds a break**.
 
-# When to Use `switch` vs `if...else`
+## When to Use `switch` vs `if...else`
 
 | Situation                                   | Recommended |
 | ------------------------------------------- | ----------- |
@@ -311,7 +311,7 @@ marks > 80 → if-else
 day = Monday/Tuesday/Wednesday → switch
 ```
 
-# Final Thoughts
+## Final Thoughts
 
 Control flow is what makes programs **smart and dynamic**.
 
