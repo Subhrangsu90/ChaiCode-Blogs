@@ -1,4 +1,4 @@
-# Control Flow in JavaScript: If, Else, and Switch Explained
+<img width="1408" height="768" alt="switch" src="https://github.com/user-attachments/assets/73f8007a-2738-4925-a837-94eec6b8f9e7" /># Control Flow in JavaScript: If, Else, and Switch Explained
 
 ![Control Flow Poster](./control_flow_poster.png)
 
@@ -170,7 +170,7 @@ The program checks conditions **from top to bottom**.
 
 Once a condition is **true**, the rest are skipped.
 
-![If...else flow](./if_else.jpg)
+![if_else](https://github.com/user-attachments/assets/082b9d2f-bc93-4f73-87f2-e9648a934af7)
 
 ## Example Program: Positive, Negative, or Zero
 
@@ -262,7 +262,7 @@ Output
 Wednesday
 ```
 
-![Switch flow](./switch.png)
+<img width="1408" height="768" alt="switch" src="https://github.com/user-attachments/assets/800b578c-a0f4-4c68-943a-4e5183fb3318" />
 
 ## Why `break` is Important
 
